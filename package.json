@@ -1,0 +1,30 @@
+{
+  "name": "projete-se-leticia",
+  "version": "1.0.0",
+  "description": "Projete-se landing page with Vercel Speed Insights",
+  "main": "content.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theplacepublicidade-dot/projete-se-leticia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theplacepublicidade-dot/projete-se-leticia/issues"
+  },
+  "homepage": "https://github.com/theplacepublicidade-dot/projete-se-leticia#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  },
+  "devDependencies": {
+    "vite": "^8.0.14"
+  }
+}
