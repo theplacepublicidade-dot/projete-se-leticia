@@ -118,8 +118,7 @@
 
         <section class="vc-panel vc-product" id="sobre"><div class="vc-container">
           ${badge(c.product.tag, 'diamond')}
-          <h2 class="vc-product-name reveal">Projete<span class="it">-se</span></h2>
-          <p class="vc-product-sub reveal">${esc(c.product.subtitle)}</p>
+          <div class="vc-product-title-wrap reveal"><h2 class="vc-product-name">Projete<span class="it">-se</span></h2><p class="vc-product-sub">${esc(c.product.subtitle)}</p></div>
           <div class="vc-nots reveal">${c.product.nots.map((n) => `<span class="vc-not">${icon('x', 12)}${esc(n)}</span>`).join('')}</div>
           <p class="vc-product-body reveal">${esc(c.product.body)}</p>
           <div class="reveal" style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap">${btn(c.product.cta)}</div>
