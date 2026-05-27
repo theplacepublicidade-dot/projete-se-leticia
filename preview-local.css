@@ -282,14 +282,16 @@ button { font: inherit; cursor: pointer; }
 
 /* PRODUCT */
 .vc-product { padding: 140px 0 116px; text-align: center; }
-.vc-product-title-wrap { display: grid; justify-items: center; gap: 42px; margin: 36px auto 54px; text-align: center; }
+.vc-product-center { width: min(100%, 980px); margin: 0 auto; display: grid; justify-items: center; text-align: center; }
+.vc-product-title-wrap { display: grid; justify-items: center; gap: 42px; width: 100%; margin: 36px auto 54px; text-align: center; }
 .vc-product-name { font-size: clamp(112px, 16vw, 246px); font-weight: 200; line-height: 1.02; letter-spacing: -0.045em; margin: 0 auto; text-align: center; }
 .vc-product-name .it { font-style: italic; font-family: var(--font-editorial), 'Boston Angel', serif; color: var(--accent); font-weight: 300; }
 .vc-product-sub { display: block; font-size: clamp(18px, 1.7vw, 23px); color: var(--ink-soft); margin: 0 auto; font-style: italic; font-family: var(--font-editorial), 'Boston Angel', serif; max-width: 760px; white-space: normal; text-align: center; }
 .vc-nots { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 800px; margin: 0 auto 48px; }
 .vc-not { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; background: var(--glass); border: 1px solid var(--border); font-size: 13px; color: var(--ink-soft); backdrop-filter: blur(12px); }
 .vc-not svg { color: var(--accent); flex: 0 0 auto; }
-.vc-product-body { font-size: 19px; color: var(--ink); line-height: 1.7; max-width: 840px; margin: 0 auto 88px; text-align: center; }
+.vc-product-body { display: block; width: min(100%, 840px); font-size: 19px; color: var(--ink); line-height: 1.7; margin: 0 auto 88px; text-align: center; }
+.vc-product-cta { display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; width: 100%; }
 
 /* PROFILES TABS */
 .vc-prof { padding: 120px 0; }
@@ -539,6 +541,7 @@ button { font: inherit; cursor: pointer; }
   .vc-fs-grid, .vc-prof-tabs, .vc-prof-panel, .vc-trans-grid, .vc-mentor-grid, .vc-bonus-card, .vc-compare, .vc-paths, .vc-bundle, .vc-test-stats { grid-template-columns: 1fr; }
   .vc-fs-card, .vc-fs-callout, .vc-trans-col, .vc-path { padding: 30px 22px; border-radius: 22px; }
   .vc-product { padding: 88px 0 94px; }
+  .vc-product-center { width: 100%; }
   .vc-product-title-wrap { gap: 24px; margin: 30px auto 40px; }
   .vc-product-name { font-size: clamp(62px, 18vw, 88px); line-height: 1.03; letter-spacing: -0.035em; }
   .vc-product-sub { font-size: 22px; line-height: 1.25; max-width: 320px; }

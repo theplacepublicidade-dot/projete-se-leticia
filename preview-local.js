@@ -116,12 +116,13 @@
           <div class="vc-fs-callout reveal"><span class="vc-mono">— O que ninguém diz</span><h3>Todos esses produtos assumem que você já sabe quem é como profissional.</h3><p>Nenhum deles foi criado para a fase anterior — a fase em que você ainda está tentando entender seu momento, identificar suas dores reais e definir sua direção antes de agir.</p><p class="last">Esse espaço estava vazio. Até agora.</p></div>
         </div></section>
 
-        <section class="vc-panel vc-product" id="sobre"><div class="vc-container">
+        <section class="vc-panel vc-product" id="sobre"><div class="vc-container"><div class="vc-product-center">
           ${badge(c.product.tag, 'diamond')}
           <div class="vc-product-title-wrap reveal"><h2 class="vc-product-name">Projete<span class="it">-se</span></h2><p class="vc-product-sub">${esc(c.product.subtitle)}</p></div>
           <div class="vc-nots reveal">${c.product.nots.map((n) => `<span class="vc-not">${icon('x', 12)}${esc(n)}</span>`).join('')}</div>
           <p class="vc-product-body reveal">${esc(c.product.body)}</p>
-          <div class="reveal" style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap">${btn(c.product.cta)}</div>
+          <div class="vc-product-cta reveal">${btn(c.product.cta)}</div>
+        </div>
         </div></section>
 
         <section class="vc-panel vc-prof" id="perfis"><div class="vc-container">
