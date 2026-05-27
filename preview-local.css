@@ -3,28 +3,28 @@
 
 @font-face {
   font-family: 'Boston Angel';
-  src: url('assets/fonts/boston-angel-light.woff2') format('woff2');
+  src: url('boston-angel-light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Boston Angel';
-  src: url('assets/fonts/boston-angel-regular.woff2') format('woff2');
+  src: url('boston-angel-regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Boston Angel';
-  src: url('assets/fonts/boston-angel-medium.woff2') format('woff2');
+  src: url('boston-angel-medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Boston Angel';
-  src: url('assets/fonts/boston-angel-bold.woff2') format('woff2');
+  src: url('boston-angel-bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;

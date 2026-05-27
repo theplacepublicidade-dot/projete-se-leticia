@@ -47,13 +47,13 @@
     .join('');
 
   const testimonials = [0, 1].flatMap(() => ['01', '02', '03', '04', '05']).map((id, i) =>
-    `<div class="vc-test-card"><img src="assets/depoimento-fundadora-${id}.png" alt="Depoimento ${(i % 5) + 1}" loading="lazy"></div>`
+    `<div class="vc-test-card"><img src="depoimento-fundadora-${id}.png" alt="Depoimento ${(i % 5) + 1}" loading="lazy"></div>`
   ).join('');
 
   const bonusCards = (c.bonus.items || [c.bonus]).map((bonus) => `
     <div class="vc-bonus-card reveal${bonus.guide ? ' vc-bonus-card--guide' : ''}">
       <div class="vc-bonus-photo${bonus.guide ? ' vc-bonus-visual' : ''}">
-        ${bonus.guide ? '<div class="guideMark">Guia<br>de Processos</div>' : '<img src="assets/workspace-leticia.jpg" alt="Escritório de Letícia Schneider" loading="lazy">'}
+        ${bonus.guide ? '<div class="guideMark">Guia<br>de Processos</div>' : '<img src="workspace-leticia.jpg" alt="Escritório de Letícia Schneider" loading="lazy">'}
         <div class="badge"><span class="dot"></span>${esc(bonus.badge || bonus.label)}</div>
         <div class="priceTag"><div class="lbl">Valor real</div><span class="strike">${esc(bonus.value)}</span><span class="free">Incluso na sua compra</span></div>
       </div>
@@ -73,7 +73,7 @@
       <div class="vc-page">
         <div class="vc-scroll-progress"><i></i></div>
         <section class="vc-panel vc-panel--tall vc-hero">
-          <div class="vc-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata"><source src="assets/video-hero.mp4" type="video/mp4"></video></div>
+          <div class="vc-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata"><source src="video-hero.mp4" type="video/mp4"></video></div>
           <div class="vc-glow"></div>
           <nav class="vc-nav">
             <div class="vc-nav-brand">Projete-se<sup>2026</sup></div>
@@ -135,7 +135,7 @@
         <section class="vc-panel vc-panel--dark vc-proc" id="processo"><div class="vc-container">
           ${shead(c.process.tag, 'Um processo em etapas. <span class="it">Cada uma com propósito.</span>', c.process.lead)}
           ${c.process.items.map((it) => `<div class="vc-proc-step reveal"><div class="vc-proc-n">${esc(it.n)}</div><div><h3>${esc(it.title)}</h3><p>${esc(it.body)}</p></div></div>`).join('')}
-          <div class="vc-video-preview reveal"><img src="assets/leticia-videoaula-cropped.png" alt="Letícia gravando vídeo guia do Projete-se" loading="lazy"><div class="cap"><div class="cap-l"><span class="vc-mono">Vídeos guia · em cada etapa</span><h3>A mentora aparece em vídeo te orientando do começo ao fim.</h3></div><span class="cap-r">Incluído</span></div></div>
+          <div class="vc-video-preview reveal"><img src="leticia-videoaula-cropped.png" alt="Letícia gravando vídeo guia do Projete-se" loading="lazy"><div class="cap"><div class="cap-l"><span class="vc-mono">Vídeos guia · em cada etapa</span><h3>A mentora aparece em vídeo te orientando do começo ao fim.</h3></div><span class="cap-r">Incluído</span></div></div>
         </div></section>
 
         <section class="vc-panel vc-trans"><div class="vc-container">
@@ -149,7 +149,7 @@
         <section class="vc-panel vc-panel--dark vc-mentor"><div class="vc-container">
           ${shead(c.mentor.tag, 'A pessoa por trás <span class="it">do método.</span>')}
           <div class="vc-mentor-grid">
-            <div class="reveal"><div class="vc-mentor-photo"><img src="assets/leticia-perfil.jpg" alt="Letícia Schneider" loading="lazy"></div></div>
+            <div class="reveal"><div class="vc-mentor-photo"><img src="leticia-perfil.jpg" alt="Letícia Schneider" loading="lazy"></div></div>
             <div class="reveal"><span class="vc-mentor-role">${esc(c.mentor.role)}</span><h2>Letícia <span class="it">Schneider</span></h2><p class="vc-mentor-lead">"${esc(c.mentor.lead)}"</p><div class="vc-mentor-body">${c.mentor.body.map((p) => `<p>${esc(p)}</p>`).join('')}</div><div class="vc-mentor-specs"><div class="vc-mentor-spec">Local<b>Vale do Araguaia</b></div><div class="vc-mentor-spec">Atuação<b>Escritório próprio</b></div><div class="vc-mentor-spec">Método<b>Replicável</b></div></div><div class="vc-mentor-quote"><q>"${esc(c.mentor.quote)}"</q><span class="by">— ${esc(c.mentor.quoteBy)}</span></div></div>
           </div>
         </div></section>
