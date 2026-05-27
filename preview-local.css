@@ -583,8 +583,8 @@ button { font: inherit; cursor: pointer; }
   .vc-test-wrap::before, .vc-test-wrap::after { width: 34px; }
   .vc-test-scroll { overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; touch-action: pan-x; padding: 4px 0 18px; cursor: grab; }
   .vc-test-scroll:active { cursor: grabbing; }
-  .vc-test-track { gap: 14px; padding: 0 clamp(18px, 5vw, 28px); animation-duration: 22s; }
-  .vc-test-card { flex-basis: min(76vw, 292px); border-radius: 22px; scroll-snap-align: center; }
+  .vc-test-track { gap: 14px; padding: 0 clamp(18px, 5vw, 28px); animation: none; transform: none; will-change: auto; }
+  .vc-test-card { flex: 0 0 min(76vw, 292px); border-radius: 22px; scroll-snap-align: center; }
   .vc-bundle li { justify-content: center; }
   .vc-close h2 { font-size: clamp(38px, 10vw, 58px); margin-bottom: 42px; }
   .vc-close-sub { letter-spacing: 0.1em; line-height: 1.6; padding: 0 8px; }
