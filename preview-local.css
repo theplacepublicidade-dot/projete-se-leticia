@@ -481,8 +481,8 @@ button { font: inherit; cursor: pointer; }
 .vc-test-wrap::before { left: 0; background: linear-gradient(to right, var(--panel) 0%, rgba(22,17,13,0.7) 36%, transparent 100%); }
 .vc-test-wrap::after  { right: 0; background: linear-gradient(to left, var(--panel) 0%, rgba(22,17,13,0.7) 36%, transparent 100%); }
 .vc-test-scroll { overflow: hidden; padding: 4px 0 18px; scrollbar-width: none; }
-.vc-test-track { display: flex; gap: 20px; width: max-content; animation: vcTestimonialsLoop 54s linear infinite; padding: 0 60px; }
-.vc-test-wrap:hover .vc-test-track { animation-play-state: paused; }
+.vc-test-track { display: flex; gap: 20px; width: max-content; animation: vcTestimonialsLoop 34s linear infinite; padding: 0 60px; will-change: transform; }
+.vc-test-wrap:hover .vc-test-track, .vc-test-wrap:active .vc-test-track, .vc-test-wrap:focus-within .vc-test-track { animation-play-state: paused; }
 @keyframes vcTestimonialsLoop { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 10px)); } }
 .vc-test-scroll::-webkit-scrollbar { height: 4px; }
 .vc-test-scroll::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
@@ -558,9 +558,13 @@ button { font: inherit; cursor: pointer; }
   .vc-mentor-specs { grid-template-columns: 1fr; }
   .vc-bonus-card { padding: 0; border-radius: 24px; overflow: hidden; }
   .vc-bonus-photo { min-height: 360px; }
+  .vc-bonus-card--guide .vc-bonus-photo { min-height: 430px; }
+  .vc-bonus-card--guide .vc-bonus-visual { padding: 92px 22px 128px; align-items: center; }
+  .vc-bonus-card--guide .vc-bonus-visual .guideMark { font-size: clamp(54px, 18vw, 78px); line-height: 0.9; letter-spacing: -0.025em; max-width: 100%; }
+  .vc-bonus-card--guide .vc-bonus-visual::before { left: 22px; bottom: 32px; font-size: 9px; letter-spacing: 0.22em; }
   .vc-bonus-content { padding: 34px 24px 38px; text-align: center; }
-  .vc-bonus-photo .badge { top: 16px; left: 16px; max-width: calc(100% - 32px); }
-  .vc-bonus-photo .priceTag { left: auto; right: 16px; bottom: 16px; max-width: min(220px, calc(100% - 32px)); padding: 12px 15px; }
+  .vc-bonus-photo .badge { top: 16px; left: 16px; right: 16px; max-width: calc(100% - 32px); justify-content: center; text-align: center; white-space: normal; line-height: 1.45; letter-spacing: 0.12em; }
+  .vc-bonus-photo .priceTag { left: 18px; right: 18px; bottom: 18px; max-width: none; padding: 12px 15px; text-align: center; }
   .vc-price-table { border-radius: 22px; }
   .vc-price-row, .vc-price-total { grid-template-columns: 1fr; gap: 8px; padding: 20px 18px; text-align: center; }
   .vc-price-value-wrap { justify-content: center; flex-wrap: wrap; }
@@ -575,10 +579,12 @@ button { font: inherit; cursor: pointer; }
   .vc-faq-toggle { width: 32px; height: 32px; }
   .vc-faq-a { padding: 0; }
   .vc-faq-a-inner { text-align: left; font-size: 15.5px; }
-  .vc-test-wrap { margin: 0 calc(clamp(18px, 5vw, 28px) * -1); padding: 0; }
-  .vc-test-wrap::before, .vc-test-wrap::after { width: 48px; }
-  .vc-test-track { gap: 14px; padding: 0 clamp(18px, 5vw, 28px); animation-duration: 46s; }
-  .vc-test-card { flex-basis: min(78vw, 300px); border-radius: 22px; }
+  .vc-test-wrap { margin: 0 calc(clamp(18px, 5vw, 28px) * -1); padding: 0; overflow: hidden; }
+  .vc-test-wrap::before, .vc-test-wrap::after { width: 34px; }
+  .vc-test-scroll { overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; touch-action: pan-x; padding: 4px 0 18px; cursor: grab; }
+  .vc-test-scroll:active { cursor: grabbing; }
+  .vc-test-track { gap: 14px; padding: 0 clamp(18px, 5vw, 28px); animation-duration: 22s; }
+  .vc-test-card { flex-basis: min(76vw, 292px); border-radius: 22px; scroll-snap-align: center; }
   .vc-bundle li { justify-content: center; }
   .vc-close h2 { font-size: clamp(38px, 10vw, 58px); margin-bottom: 42px; }
   .vc-close-sub { letter-spacing: 0.1em; line-height: 1.6; padding: 0 8px; }
