@@ -88,6 +88,18 @@ window.CONTENT = {
       { n: '↗', title: 'Suporte', body: 'Você não fica sem amparo. O suporte permanece disponível ao longo de todo o seu acesso para dúvidas e sustentação da experiência.' },
     ],
   },
+  ai: {
+    tag: 'I.A + Aplicação',
+    title: 'Uma mentora digital para transformar percepção em próximos passos.',
+    lead: 'Depois do Mapa de Clareza, você acessa a Mentora Projete-se: uma IA personalizada que reconhece o seu perfil e ajuda a organizar decisões com mais intenção.',
+    body: 'Não é uma conversa genérica. A experiência parte do seu momento profissional — Exploradora, Realizadora, Expansora ou Experiente — para aprofundar o que você percebeu durante o material.',
+    bullets: [
+      'Direcionamentos guiados de acordo com o seu perfil.',
+      'Perguntas para destravar decisões e organizar prioridades.',
+      'Aplicação prática para transformar clareza em movimento.',
+    ],
+    status: 'Mentora Projete-se ativa',
+  },
   transformation: {
     tag: 'O antes e o depois',
     title: 'O que muda depois do Projete-se',
@@ -128,6 +140,62 @@ window.CONTENT = {
     quote: 'Nem sempre o que você precisa é de mais informação. Às vezes, é só do ponto de partida certo.',
     quoteBy: 'Letícia Schneider',
   },
+  testimonials: [
+    {
+      text: 'Gostei muito disso de já ter acesso a materiais que apoiam a mudança na prática. Dá uma sensação de continuidade muito boa.',
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150',
+      name: 'Ana Paula Ribeiro',
+      role: 'Leitora do Projete-se • Anápolis, GO',
+    },
+    {
+      text: 'Eu comprei sem saber exatamente o que esperar... parecia mais um conteúdo sobre direção apenas, e eu já tinha visto muita coisa parecida. Mas o que me surpreendeu foi que não é só conteúdo. É como se alguém organizasse a minha cabeça. Eu percebi que eu não estava “perdida” como eu achava, eu só nunca tinha parado para estruturar onde eu estou e para onde eu quero ir. Foi o primeiro lugar onde eu senti clareza de verdade. Não é um e-book que você só lê... é um processo.',
+      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150',
+      name: 'Mariana Alves',
+      role: 'Leitora do Projete-se • Ribeirão Preto, SP',
+    },
+    {
+      text: 'Não fica pesado, e ainda assim entrega respostas rápidas.',
+      image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150&h=150',
+      name: 'Ana Beatriz Souza',
+      role: 'Leitora do Projete-se • Sinop, MT',
+    },
+    {
+      text: 'Nossa, de verdade... superou muito o que eu estava esperando.',
+      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150',
+      name: 'Camila Nogueira',
+      role: 'Leitora do Projete-se • Rio Verde, GO',
+    },
+    {
+      text: 'Achei que seria algo mais simples, mas me deu um norte mesmo.',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150',
+      name: 'Juliana Costa',
+      role: 'Leitora do Projete-se • São José do Rio Preto, SP',
+    },
+    {
+      text: 'Impressionante como o conteúdo entende o nosso momento. Eu ainda estava no meio da leitura e já sentia que as respostas que precisava já estavam ali, aparecendo naturalmente. E-book de muito valor!',
+      image: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&q=80&w=150&h=150',
+      name: 'Larissa Martins',
+      role: 'Leitora do Projete-se • Rondonópolis, MT',
+    },
+    {
+      text: 'Depois da leitura, usei a IA personalizada para organizar minhas ideias e transformar as reflexões em próximos passos possíveis. Ficou muito mais simples entender o que priorizar.',
+      image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=150&h=150',
+      name: 'Fernanda Lima',
+      role: 'Cenário de aplicação • Jataí, GO',
+    },
+    {
+      text: 'O Guia de Processos em Excel ajuda a levar a clareza para a rotina. Ter as etapas organizadas reduz o improviso e facilita enxergar o que precisa acontecer em cada projeto.',
+      image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80&w=150&h=150',
+      name: 'Bruna Ferreira',
+      role: 'Cenário de aplicação • Bauru, SP',
+    },
+    {
+      text: 'Eu também adquiri o Template do Trello e gostei de combinar os dois materiais: primeiro organizei a direção com o Projete-se e depois levei as prioridades para um fluxo mais visual.',
+      image: 'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&q=80&w=150&h=150',
+      name: 'Renata Oliveira',
+      role: 'Cenário de aplicação • Lucas do Rio Verde, MT',
+    },
+  ],
   bonus: {
     tag: 'E tem mais',
     title: 'Além do material, você ainda ganha estes bônus:',
@@ -150,8 +218,8 @@ window.CONTENT = {
       {
         label: 'BÔNUS - GUIA DE PROCESSOS — incluso na oferta',
         badge: 'Bônus - Guia de Processos',
-        name: 'Guia de Processos',
-        body: 'Um passo a passo claro com todas as fases de projeto, do atendimento inicial à entrega final, organizado em etapas práticas e aplicáveis ao dia a dia de profissionais de arquitetura ou engenharia.',
+        name: 'Guia de Processos em Excel',
+        body: 'Uma planilha em Excel com um passo a passo claro de todas as fases de projeto, do atendimento inicial à entrega final, organizada em etapas práticas e aplicáveis ao dia a dia de profissionais de arquitetura ou engenharia.',
         bullets: [
           'Reduz o improviso e aumenta a previsibilidade.',
           'Evita retrabalhos e desgastes com o cliente.',
@@ -173,7 +241,7 @@ window.CONTENT = {
       { name: 'Etapa IA + Aplicação — prompts e direcionamentos', value: 'R$67' },
       { name: 'Suporte e acesso permanente', value: 'R$47' },
       { name: 'BÔNUS — Turma Fundadora: mentoria em vídeo em grupo com Letícia (40min)', value: 'R$197', bonus: true },
-      { name: 'BÔNUS — Guia de Processos: fases de projeto do atendimento inicial à entrega final', value: 'R$97', bonus: true },
+      { name: 'BÔNUS — Guia de Processos em Excel: fases de projeto do atendimento inicial à entrega final', value: 'R$97', bonus: true },
     ],
     total: 'R$799',
     today: 'R$97',
