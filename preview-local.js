@@ -185,7 +185,7 @@
           <div class="vc-shead"><span class="vc-mono">${esc(c.profiles.tag)}</span><h2 class="vc-motion-title vc-title-whisper">${whisperWords('Nem toda arquiteta vive a profissão ')}<span class="it">${whisperWords('do mesmo jeito.', 6)}</span></h2><p class="lead">${esc(c.profiles.lead)}</p></div>
           <div class="vc-prof-tabs" role="tablist">${c.profiles.items.map((p, i) => `<button role="tab" aria-selected="${i === 0}" class="vc-prof-tab" data-profile="${i}"><span class="vc-prof-tab-meta">Perfil ${esc(p.letter)}</span><div class="vc-prof-tab-letter">${esc(p.letter)}</div><div class="vc-prof-tab-name">${esc(p.name)}</div></button>`).join('')}</div>
           <div class="vc-prof-panel" id="profile-panel"></div>
-          <p class="vc-prof-quote-mid reveal">"${esc(c.profiles.quote)}"</p>
+          <p class="vc-prof-quote-mid reveal"><span>"${esc(c.profiles.quote)}"</span></p>
         </div></section>
 
         <section class="vc-panel vc-panel--dark vc-proc" id="processo"><div class="vc-container">
