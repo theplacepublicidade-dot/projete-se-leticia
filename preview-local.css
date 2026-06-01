@@ -225,7 +225,7 @@ button { font: inherit; cursor: pointer; }
 .vc-hero-cta .vc-btn { width: min(100%, 430px); max-width: calc(100% - 24px); min-height: 48px; padding: 7px 20px 7px 7px; font-size: clamp(12px, 3.45vw, 15px); }
 .vc-hero-cta .vc-btn .disc { width: 34px; height: 34px; }
 .vc-hero-sub-cta { font-size: 13px; color: var(--ink-muted); margin-top: 24px; }
-.vc-hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: var(--bg); }
+.vc-hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: var(--bg) url('leticia-videoaula-cropped.png') center top / cover no-repeat; }
 .vc-hero-bg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; transform: scale(1.02); filter: saturate(0.95) contrast(1.04) brightness(0.74); }
 .vc-hero-bg::before { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse 76% 58% at 50% 18%, rgba(212,160,122,0.22), transparent 58%), linear-gradient(180deg, rgba(10,8,7,0.2) 0%, rgba(10,8,7,0.72) 72%, rgba(10,8,7,0.96) 100%); }
 .vc-hero-bg::after { content: ""; position: absolute; inset: 0; z-index: 2; opacity: 0.22; background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0 1px, transparent 1px); background-size: 3px 3px; mix-blend-mode: soft-light; pointer-events: none; }
@@ -371,7 +371,7 @@ button { font: inherit; cursor: pointer; }
 .vc-ai-window-bar span { width: 7px; height: 7px; border-radius: 50%; background: #d6c9bd; }
 .vc-ai-window-bar span:nth-child(2) { background: #d4a07a; }
 .vc-ai-window-bar span:nth-child(3) { background: #9b7558; }
-.vc-ai-screen { position: relative; overflow: hidden; background: #fff; }
+.vc-ai-screen { position: relative; overflow: hidden; aspect-ratio: 1345 / 1294; background: #fff; }
 .vc-ai-screen img { width: 100%; height: auto; display: block; }
 .vc-ai-shine { position: absolute; inset: -20% auto -20% -38%; width: 24%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.72), transparent); transform: skewX(-18deg); animation: vcAiShine 5.6s ease-in-out infinite; }
 .vc-ai-status { position: absolute; right: 28px; bottom: 30px; display: inline-flex; align-items: center; gap: 9px; padding: 9px 13px; border-radius: 999px; background: rgba(10,8,7,0.82); border: 1px solid rgba(255,255,255,0.18); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: var(--ink); font-family: var(--font-mono), 'Poppins', system-ui, sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
@@ -556,6 +556,7 @@ button { font: inherit; cursor: pointer; }
 .vc-testimonial-layout--desktop { display: grid; }
 .vc-testimonial-column { min-width: 0; overflow: hidden; }
 .vc-testimonial-track { display: flex; flex-direction: column; gap: 16px; padding: 16px 0; animation: vcTestimonialsV2Up var(--duration) linear infinite; will-change: transform; }
+.vc-root.vc-is-scrolling .vc-testimonial-track { animation-play-state: paused; }
 .vc-testimonial-column:nth-child(even) .vc-testimonial-track { animation-name: vcTestimonialsV2Down; }
 .vc-testimonial-stage:hover .vc-testimonial-track, .vc-testimonial-stage:focus-within .vc-testimonial-track { animation-play-state: paused; }
 @keyframes vcTestimonialsV2Up { from { transform: translateY(0); } to { transform: translateY(calc(-50% - 8px)); } }
@@ -590,6 +591,7 @@ button { font: inherit; cursor: pointer; }
 
 /* Mobile */
 @media (max-width: 880px) {
+  .vc-root { touch-action: pan-y; }
   .vc-page { padding: 8px; gap: 8px; }
   .vc-panel { border-radius: 26px; }
   .vc-container { padding: 0 clamp(18px, 5vw, 28px); }
@@ -613,7 +615,7 @@ button { font: inherit; cursor: pointer; }
   .vc-badge { border-radius: 18px; font-size: 12px; line-height: 1.35; padding: 8px 12px; }
   .vc-trust { margin-top: 32px; gap: 10px; }
   .vc-trust-pill { font-size: 11.5px; padding: 7px 10px; }
-  .vc-hero-bg video { object-position: center top; opacity: 1; }
+  .vc-hero-bg video { object-position: center top; opacity: 1; transform: none; filter: none; }
   .vc-stat-card, .vc-cut { display: none; }
   .vc-pains, .vc-fs, .vc-prof, .vc-proc, .vc-ai, .vc-trans, .vc-mentor, .vc-bonus, .vc-pricing, .vc-faq, .vc-close, .vc-guar { padding: 80px 0; }
   .vc-shead { margin-bottom: 46px; }
@@ -692,6 +694,8 @@ button { font: inherit; cursor: pointer; }
   .vc-close-sub { letter-spacing: 0.1em; line-height: 1.6; padding: 0 8px; }
   .vc-close-quote { margin-top: 68px; }
   .vc-sticky-cta { max-width: calc(100% - 16px); margin-left: auto; margin-right: auto; bottom: 10px; gap: 8px; padding: 8px 8px 8px 12px; font-size: 12px; }
+  .vc-sticky-cta, .vc-nav-menu, .vc-badge, .vc-trust-pill, .vc-ai-status, .vc-ai-profiles span { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .vc-sticky-cta { background: rgba(10,8,7,0.96); }
   .vc-sticky-cta > span:nth-child(2) { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .vc-sticky-cta .vc-btn { flex: 0 0 auto; min-height: 36px; padding: 4px 12px 4px 4px; font-size: 12px; }
   .vc-sticky-cta .vc-btn .disc { width: 26px; height: 26px; }
@@ -708,7 +712,7 @@ button { font: inherit; cursor: pointer; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .vc-hero-bg video { display: none; }
+  .vc-hero-bg video { animation: none; }
   .vc-product-lamp-beam, .vc-product-lamp-glow, .vc-product-lamp-line, .vc-ai-demo::before, .vc-ai-window, .vc-ai-shine, .vc-ai-profiles span { animation: none; }
   .vc-title-word-motion .vc-motion-word, .vc-title-blur .vc-motion-char, .vc-title-whisper .vc-whisper-word { opacity: 1; transform: none; filter: none; transition: none; }
   .vc-underline-title path { opacity: .9; stroke-dashoffset: 0; transition: none; }

@@ -127,7 +127,7 @@
       <div class="vc-page">
         <div class="vc-scroll-progress"><i></i></div>
         <section class="vc-panel vc-panel--tall vc-hero">
-          <div class="vc-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata"><source src="video-hero.mp4" type="video/mp4"></video></div>
+          <div class="vc-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="leticia-videoaula-cropped.png"><source src="video-hero.mp4" type="video/mp4"></video></div>
           <div class="vc-glow"></div>
           <nav class="vc-nav">
             <div class="vc-nav-brand">Projete-se<sup>2026</sup></div>
@@ -206,7 +206,7 @@
             <div class="vc-ai-demo reveal">
               <div class="vc-ai-window">
                 <div class="vc-ai-window-bar"><span></span><span></span><span></span></div>
-                <div class="vc-ai-screen"><img src="mentora-projete-se-ia.png" alt="Interface da Mentora Projete-se com opções personalizadas para cada perfil profissional" loading="lazy"><i class="vc-ai-shine" aria-hidden="true"></i></div>
+                <div class="vc-ai-screen"><img src="mentora-projete-se-ia.png" alt="Interface da Mentora Projete-se com opções personalizadas para cada perfil profissional" loading="eager" decoding="async"><i class="vc-ai-shine" aria-hidden="true"></i></div>
                 <span class="vc-ai-status"><i></i>${esc(c.ai.status)}</span>
               </div>
               <div class="vc-ai-profiles" aria-label="Perfis personalizados">${c.profiles.items.map((profile) => `<span>${esc(profile.name)}</span>`).join('')}</div>
@@ -378,14 +378,50 @@
     });
   });
 
+  const heroVideo = document.querySelector('.vc-hero-bg video');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const tryPlayHeroVideo = () => {
+    if (!heroVideo || reducedMotion.matches) return;
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.setAttribute('muted', '');
+    heroVideo.setAttribute('playsinline', '');
+    heroVideo.setAttribute('webkit-playsinline', '');
+    const attempt = heroVideo.play();
+    if (attempt && typeof attempt.catch === 'function') attempt.catch(() => {});
+  };
+  if (heroVideo) {
+    ['loadedmetadata', 'loadeddata', 'canplay'].forEach((eventName) => {
+      heroVideo.addEventListener(eventName, tryPlayHeroVideo, { passive: true });
+    });
+    window.addEventListener('pageshow', tryPlayHeroVideo, { passive: true });
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) tryPlayHeroVideo();
+    });
+    document.addEventListener('touchstart', tryPlayHeroVideo, { passive: true, once: true });
+    document.addEventListener('pointerdown', tryPlayHeroVideo, { passive: true, once: true });
+    tryPlayHeroVideo();
+  }
+
+  const pageRoot = document.querySelector('.vc-root');
   const progressBar = document.querySelector('.vc-scroll-progress i');
   const sticky = document.querySelector('.vc-sticky-cta');
-  window.addEventListener('scroll', () => {
+  let scrollFrame = 0;
+  let scrollIdleTimer = 0;
+  const updateScrollUi = () => {
+    scrollFrame = 0;
     const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
     const percent = Math.min(1, Math.max(0, scrollY / max));
     progressBar.style.setProperty('--p', `${percent * 100}%`);
     sticky.classList.toggle('in', scrollY > 600 && percent < 0.95);
+  };
+  window.addEventListener('scroll', () => {
+    pageRoot.classList.add('vc-is-scrolling');
+    clearTimeout(scrollIdleTimer);
+    scrollIdleTimer = setTimeout(() => pageRoot.classList.remove('vc-is-scrolling'), 160);
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScrollUi);
   }, { passive: true });
+  updateScrollUi();
 
   const counter = document.getElementById('price-counter');
   if ('IntersectionObserver' in window) {
