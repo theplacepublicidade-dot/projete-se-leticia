@@ -150,11 +150,11 @@
             <div class="vc-trust reveal">${trust}</div>
             <div class="vc-hero-sub-cta">12x de R$10,03 · ou R$97 à vista · acesso imediato</div>
             <div class="marquee"><div class="marquee-track">
-              <span>Bônus - Turma Fundadora<span class="sep"></span></span><span>4 perfis personalizados<span class="sep"></span></span><span>Guia de Processos<span class="sep"></span></span><span>Mentoria em vídeo 40min<span class="sep"></span></span><span>Garantia incondicional de 14 dias<span class="sep"></span></span><span>Acesso permanente<span class="sep"></span></span>
-              <span>Bônus - Turma Fundadora<span class="sep"></span></span><span>4 perfis personalizados<span class="sep"></span></span><span>Guia de Processos<span class="sep"></span></span><span>Mentoria em vídeo 40min<span class="sep"></span></span><span>Garantia incondicional de 14 dias<span class="sep"></span></span><span>Acesso permanente<span class="sep"></span></span>
+              <span>Bônus Mentoria em Vídeo<span class="sep"></span></span><span>4 perfis personalizados<span class="sep"></span></span><span>Guia de Processos<span class="sep"></span></span><span>Mentoria em vídeo 40min<span class="sep"></span></span><span>Garantia incondicional de 14 dias<span class="sep"></span></span><span>Acesso permanente<span class="sep"></span></span>
+              <span>Bônus Mentoria em Vídeo<span class="sep"></span></span><span>4 perfis personalizados<span class="sep"></span></span><span>Guia de Processos<span class="sep"></span></span><span>Mentoria em vídeo 40min<span class="sep"></span></span><span>Garantia incondicional de 14 dias<span class="sep"></span></span><span>Acesso permanente<span class="sep"></span></span>
             </div></div>
           </div>
-          <div class="vc-stat-card"><div><div class="num">2 bônus</div><div class="lbl">Turma Fundadora · Guia de Processos</div></div><div class="pill"><span class="disc">${icon('arrow-up-right', 12)}</span><span>Incluso</span></div></div>
+          <div class="vc-stat-card"><div><div class="num">2 bônus</div><div class="lbl">Mentoria em Vídeo · Guia de Processos</div></div><div class="pill"><span class="disc">${icon('arrow-up-right', 12)}</span><span>Incluso</span></div></div>
           <div class="vc-cut"><div class="ic">${icon('arrow-up-right', 22)}</div><div><div class="lbl">Como funciona</div><div class="sub">Material guiado${icon('arrow', 12)}</div></div></div>
         </section>
 
@@ -225,8 +225,8 @@
         <section class="vc-panel vc-panel--dark vc-mentor"><div class="vc-container">
           <div class="vc-shead"><span class="vc-mono">${esc(c.mentor.tag)}</span><h2 class="vc-motion-title vc-title-whisper">${whisperWords('A pessoa por trás ')}<span class="it">${whisperWords('do método.', 4)}</span></h2></div>
           <div class="vc-mentor-grid">
-            <div class="reveal"><div class="vc-mentor-photo"><img src="leticia-perfil.jpg" alt="Letícia Schneider" loading="lazy"></div></div>
-            <div class="reveal"><span class="vc-mentor-role">${esc(c.mentor.role)}</span><h2>Letícia <span class="it">Schneider</span></h2><p class="vc-mentor-lead">"${esc(c.mentor.lead)}"</p><div class="vc-mentor-body">${c.mentor.body.map((p) => `<p>${esc(p)}</p>`).join('')}</div><div class="vc-mentor-specs"><div class="vc-mentor-spec">Local<b>Vale do Araguaia</b></div><div class="vc-mentor-spec">Atuação<b>Escritório próprio</b></div><div class="vc-mentor-spec">Método<b>Replicável</b></div></div><div class="vc-mentor-quote"><q>"${esc(c.mentor.quote)}"</q><span class="by">— ${esc(c.mentor.quoteBy)}</span></div></div>
+            <div class="vc-mentor-intro reveal"><div class="vc-mentor-photo"><img src="leticia-perfil.jpg" alt="Letícia Schneider" loading="lazy"></div><span class="vc-mentor-role">${esc(c.mentor.role)}</span><h2>Letícia <span class="it">Schneider</span></h2><p class="vc-mentor-lead">"${esc(c.mentor.lead)}"</p></div>
+            <div class="vc-mentor-story reveal"><div class="vc-mentor-body">${c.mentor.body.map((p) => `<p>${esc(p)}</p>`).join('')}</div><div class="vc-mentor-quote"><q>"${esc(c.mentor.quote)}"</q><span class="by">— ${esc(c.mentor.quoteBy)}</span></div></div>
           </div>
         </div></section>
 
