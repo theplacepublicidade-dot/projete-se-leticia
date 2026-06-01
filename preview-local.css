@@ -119,6 +119,7 @@ button { font: inherit; cursor: pointer; }
 .vc-root[data-palette="salvia"]  { --accent: #a8c099; --accent-2: #c4d8b6; }
 .vc-root[data-palette="grafite"] { --accent: #c9c1b3; --accent-2: #e0d9cb; }
 
+.vc-root { overflow-anchor: none; }
 .vc-root * { box-sizing: border-box; }
 .vc-root :where(h1,h2,h3,h4) {
   margin: 0;
@@ -335,7 +336,7 @@ button { font: inherit; cursor: pointer; }
 .vc-prof-tab-letter { font-size: 44px; font-weight: 200; letter-spacing: -0.04em; line-height: 1; margin-bottom: 14px; font-family: var(--font-editorial), 'Boston Angel', serif; font-style: italic; color: var(--accent); }
 .vc-prof-tab[aria-selected="true"] .vc-prof-tab-letter { color: var(--accent-ink); }
 .vc-prof-tab-name { font-size: 19px; font-weight: 400; letter-spacing: -0.015em; }
-.vc-prof-panel { padding: 60px 56px; border-radius: 28px; background: var(--bg); border: 1px solid var(--border); display: grid; grid-template-columns: 1.1fr 1.6fr; gap: 56px; align-items: center; }
+.vc-prof-panel { padding: 60px 56px; border-radius: 28px; background: var(--bg); border: 1px solid var(--border); display: grid; grid-template-columns: 1.1fr 1.6fr; gap: 56px; align-items: center; overflow-anchor: none; }
 .vc-prof-panel > * { animation: vcProfileSwap .55s cubic-bezier(.2,.7,.2,1); }
 @keyframes vcProfileHint { 0% { transform: translateY(0); } 45% { transform: translateY(-5px); } 100% { transform: translateY(0); } }
 @keyframes vcProfileSwap { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
@@ -551,7 +552,7 @@ button { font: inherit; cursor: pointer; }
 .vc-testimonial-head h2 { margin-top: 20px; color: var(--testimonial-ink); font-size: clamp(50px, 6.2vw, 84px); line-height: 0.98; }
 .vc-testimonial-head h2 .it { color: var(--testimonial-accent); font-family: var(--font-editorial), 'Boston Angel', serif; font-style: italic; }
 .vc-testimonial-head p { max-width: 650px; margin: 20px auto 0; color: var(--testimonial-soft); font-size: 17px; line-height: 1.65; }
-.vc-testimonial-stage { position: relative; }
+.vc-testimonial-stage { position: relative; overflow-anchor: none; contain: layout paint; }
 .vc-testimonial-layout { display: none; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-height: 720px; overflow: hidden; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%); }
 .vc-testimonial-layout--desktop { display: grid; }
 .vc-testimonial-column { min-width: 0; overflow: hidden; }
@@ -639,7 +640,7 @@ button { font: inherit; cursor: pointer; }
   .vc-product-body { font-size: 17px; max-width: 100%; margin-bottom: 76px; }
   .vc-not { width: 100%; justify-content: center; }
   .vc-prof-tab { text-align: center; padding: 18px; }
-  .vc-prof-panel { padding: 34px 24px; gap: 22px; }
+  .vc-prof-panel { min-height: 520px; padding: 34px 24px; gap: 22px; }
   .vc-prof-big { font-size: clamp(120px, 42vw, 180px); }
   .vc-prof-quote { font-size: clamp(26px, 7vw, 34px); }
   .vc-prof-quote-mid { margin: 42px auto 0; }

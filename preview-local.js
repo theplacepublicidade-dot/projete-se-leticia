@@ -148,7 +148,7 @@
             <p class="vc-hero-sub reveal">${esc(c.hero.body)}</p>
             <div class="vc-hero-cta reveal">${btn(c.hero.cta)}</div>
             <div class="vc-trust reveal">${trust}</div>
-            <div class="vc-hero-sub-cta">12x de R$11,54 · ou R$97 à vista · acesso imediato</div>
+            <div class="vc-hero-sub-cta">12x de R$10,03 · ou R$97 à vista · acesso imediato</div>
             <div class="marquee"><div class="marquee-track">
               <span>Bônus - Turma Fundadora<span class="sep"></span></span><span>4 perfis personalizados<span class="sep"></span></span><span>Guia de Processos<span class="sep"></span></span><span>Mentoria em vídeo 40min<span class="sep"></span></span><span>Garantia incondicional de 14 dias<span class="sep"></span></span><span>Acesso permanente<span class="sep"></span></span>
               <span>Bônus - Turma Fundadora<span class="sep"></span></span><span>4 perfis personalizados<span class="sep"></span></span><span>Guia de Processos<span class="sep"></span></span><span>Mentoria em vídeo 40min<span class="sep"></span></span><span>Garantia incondicional de 14 dias<span class="sep"></span></span><span>Acesso permanente<span class="sep"></span></span>
@@ -262,12 +262,12 @@
           <h2 class="reveal">Você tem dois caminhos<br><span class="it">a partir daqui.</span></h2>
           <div class="vc-paths"><div class="vc-path reveal"><span class="vc-mono">Caminho A</span><p>${esc(c.close.pathA)}</p></div><div class="vc-path vc-path--b reveal"><span class="vc-mono">Caminho B · escolha</span><p>${esc(c.close.pathB)}</p></div></div>
           <ul class="vc-bundle reveal">${c.close.bundle.map((b) => `<li>${icon('check', 14)}${esc(b)}</li>`).join('')}</ul>
-          <div class="vc-close-price reveal">12x de <b>R$11,54</b><div style="font-size:.7em;margin-top:8px;color:var(--ink-soft)">ou R$97 à vista</div></div>
+          <div class="vc-close-price reveal">12x de <b>R$10,03</b><div style="font-size:.7em;margin-top:8px;color:var(--ink-soft)">ou R$97 à vista</div></div>
           <div class="reveal">${btn(c.close.cta)}</div><div class="vc-close-sub reveal">${esc(c.close.sub)}</div><blockquote class="vc-close-quote reveal">"${esc(c.mentor.quote)}"<span class="by">— ${esc(c.mentor.quoteBy)}</span></blockquote>
         </div></section>
 
         <footer class="vc-footer">${esc(c.footer)}</footer>
-        <div class="vc-sticky-cta"><span class="liveDot"></span><span>12x de <b style="color:var(--accent)">R$11,54</b> · ou R$97 à vista</span><a class="vc-btn" href="${CHECKOUT_URL}"><span class="disc">${icon('arrow-up-right', 12)}</span><span>Quero agora</span></a></div>
+        <div class="vc-sticky-cta"><span class="liveDot"></span><span>12x de <b style="color:var(--accent)">R$10,03</b> · ou R$97 à vista</span><a class="vc-btn" href="${CHECKOUT_URL}"><span class="disc">${icon('arrow-up-right', 12)}</span><span>Quero agora</span></a></div>
       </div>
     </div>`;
 
@@ -296,6 +296,11 @@
     profileTimer = null;
   }
 
+  function pauseProfileRotation() {
+    if (profileTimer) clearInterval(profileTimer);
+    profileTimer = null;
+  }
+
   function startProfileRotation() {
     if (profileRotationStopped || profileTimer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     profileTimer = setInterval(() => {
@@ -308,11 +313,11 @@
     if (!counter || counter.dataset.started) return;
     counter.dataset.started = 'true';
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      counter.innerHTML = '<span class="small">R$</span>11,54';
+      counter.innerHTML = '<span class="small">R$</span>10,03';
       return;
     }
     const start = 59.90;
-    const end = 11.54;
+    const end = 10.03;
     const duration = 2400;
     const began = performance.now();
     const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
@@ -436,10 +441,8 @@
     document.querySelectorAll('.vc-motion-title').forEach((title) => motionObserver.observe(title));
 
     const profilesObserver = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) {
-        startProfileRotation();
-        profilesObserver.disconnect();
-      }
+      if (entries.some((entry) => entry.isIntersecting)) startProfileRotation();
+      else pauseProfileRotation();
     }, { threshold: 0.3 });
     profilesObserver.observe(document.getElementById('perfis'));
 
