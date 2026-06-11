@@ -132,73 +132,56 @@
           <nav class="vc-nav">
             <div class="vc-nav-brand">Projete-se<sup>2026</sup></div>
             <ul class="vc-nav-menu" id="vc-mobile-menu">
-              <li><a href="#sobre">Sobre</a></li>
-              <li><a href="#perfis">Perfis</a></li>
-              <li><a href="#processo">Processo</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#promessa">Promessa</a></li>
+              <li><a href="#metodo">Método</a></li>
+              <li><a href="#ia">IA</a></li>
+              <li><a href="#bonus">Bônus</a></li>
+              <li><a href="#oferta">Comprar</a></li>
             </ul>
             <div class="vc-nav-actions">
-              <a class="vc-btn vc-btn--nav" href="${CHECKOUT_URL}"><span class="disc">${icon('arrow-up-right', 14)}</span><span>Quero acesso</span></a>
+              <a class="vc-btn vc-btn--nav" href="${CHECKOUT_URL}"><span class="disc">${icon('arrow-up-right', 14)}</span><span>Quero clareza</span></a>
               <button class="vc-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="vc-mobile-menu">${icon('menu', 20)}</button>
             </div>
           </nav>
           <div class="vc-hero-inner" style="font-weight:200">
             ${badge('Para arquitetas em reorganização profissional', 'sparkle')}
-            <h1><span class="word">Você</span> <span class="word">não</span> <span class="word">está</span> <span class="word">perdida.</span><br><span class="it"><span class="word">Só</span> <span class="word">está</span> <span class="word">sem</span> <span class="word">direção.</span></span></h1>
+            <h1 class="vc-hero-headline--long">
+              <span class="word">ARQUITETA:</span> <span class="word">Cansada</span> <span class="word">de</span> <span class="word">se</span> <span class="word">sentir</span> <span class="word">perdida?</span>
+              <span class="vc-hero-headline-support"><span class="word">Destrave</span> <span class="word">sua</span> <span class="word">carreira</span> <span class="word">em</span> <span class="word">7</span> <span class="word">dias</span></span>
+              <span class="vc-hero-headline-price"><span class="word">com</span> <span class="word">o</span> <span class="word">Método</span> <span class="word">Projete-se</span> <span class="word">+</span> <span class="word">IA.</span></span>
+            </h1>
             <p class="vc-hero-sub reveal">${esc(c.hero.body)}</p>
             <div class="vc-hero-cta reveal">${btn(c.hero.cta)}</div>
             <div class="vc-trust reveal">${trust}</div>
             <div class="vc-hero-sub-cta">12x de R$10,03 · ou R$97 à vista · acesso imediato</div>
             <div class="marquee"><div class="marquee-track">
-              <span>Bônus Mentoria em Vídeo<span class="sep"></span></span><span>4 perfis personalizados<span class="sep"></span></span><span>Guia de Processos<span class="sep"></span></span><span>Mentoria em vídeo 40min<span class="sep"></span></span><span>Garantia incondicional de 14 dias<span class="sep"></span></span><span>Acesso permanente<span class="sep"></span></span>
-              <span>Bônus Mentoria em Vídeo<span class="sep"></span></span><span>4 perfis personalizados<span class="sep"></span></span><span>Guia de Processos<span class="sep"></span></span><span>Mentoria em vídeo 40min<span class="sep"></span></span><span>Garantia incondicional de 14 dias<span class="sep"></span></span><span>Acesso permanente<span class="sep"></span></span>
+              <span>Método Projete-se + IA<span class="sep"></span></span><span>R$97 à vista<span class="sep"></span></span><span>12x de R$10,03<span class="sep"></span></span><span>Bônus Mentoria em Vídeo<span class="sep"></span></span><span>Guia de Processos<span class="sep"></span></span><span>Garantia de 14 dias<span class="sep"></span></span>
+              <span>Método Projete-se + IA<span class="sep"></span></span><span>R$97 à vista<span class="sep"></span></span><span>12x de R$10,03<span class="sep"></span></span><span>Bônus Mentoria em Vídeo<span class="sep"></span></span><span>Guia de Processos<span class="sep"></span></span><span>Garantia de 14 dias<span class="sep"></span></span>
             </div></div>
           </div>
           <div class="vc-stat-card"><div><div class="num">2 bônus</div><div class="lbl">Mentoria em Vídeo · Guia de Processos</div></div><div class="pill"><span class="disc">${icon('arrow-up-right', 12)}</span><span>Incluso</span></div></div>
           <div class="vc-cut"><div class="ic">${icon('arrow-up-right', 22)}</div><div><div class="lbl">Como funciona</div><div class="sub">Material guiado${icon('arrow', 12)}</div></div></div>
         </section>
 
-        <section class="vc-panel vc-pains"><div class="vc-container">
-          <div class="vc-shead"><span class="vc-mono">${esc(c.pains.tag)}</span><h2 class="vc-motion-title vc-title-whisper">${whisperWords('Talvez o problema não seja ')}<span class="it">${whisperWords('falta de esforço.', 5)}</span></h2><p class="lead">${esc(c.pains.lead)}</p></div>
-          ${c.pains.items.map((it) => `<div class="vc-pain reveal"><div class="n">${esc(it.n)}</div><p>${esc(it.text)}</p></div>`).join('')}
-          <blockquote class="vc-pull reveal">E isso não é falta de capacidade.<br><span class="it">É falta de leitura do momento.</span></blockquote>
+        <section class="vc-panel vc-pains vc-simple-section" id="promessa"><div class="vc-container">
+          <div class="vc-shead"><span class="vc-mono">${esc(c.pains.tag)}</span><h2 class="vc-motion-title vc-title-whisper">${whisperWords('Você não precisa de mais informação, ')}<span class="it">${whisperWords('precisa de clareza e um plano de ação.', 6)}</span></h2></div>
+          <div class="vc-simple-copy reveal">
+            <p>${esc(c.pains.lead)}</p>
+            ${c.pains.items.map((it) => `<p>${esc(it.text)}</p>`).join('')}
+          </div>
+          <blockquote class="vc-pull reveal">${esc(c.pains.pull)}</blockquote>
         </div></section>
 
-        <section class="vc-panel vc-panel--dark vc-fs"><div class="vc-container">
-          ${sheadUnderline(c.falseSolutions.tag, 'Você já tentou. Mas as soluções <span class="it">erradas</span> não resolvem o problema certo.', c.falseSolutions.lead)}
-          <div class="vc-fs-grid">${c.falseSolutions.items.map((it) => `<div class="vc-fs-card reveal"><div class="ic">${icon(it.icon, 20)}</div><h3>${esc(it.title)}</h3><p>${esc(it.body)}</p></div>`).join('')}</div>
-          <div class="vc-fs-callout reveal"><span class="vc-mono">— O que ninguém diz</span><h3>Todos esses produtos assumem que você já sabe quem é como profissional.</h3><p>Nenhum deles foi criado para a fase anterior — a fase em que você ainda está tentando entender seu momento, identificar suas dores reais e definir sua direção antes de agir.</p><p class="last">Esse espaço estava vazio. Até agora.</p></div>
-        </div></section>
-
-        <section class="vc-panel vc-product" id="sobre">
-          <div class="vc-product-lamp" aria-hidden="true"><span class="vc-product-lamp-beam vc-product-lamp-beam--left"></span><span class="vc-product-lamp-beam vc-product-lamp-beam--right"></span><span class="vc-product-lamp-glow"></span><span class="vc-product-lamp-line"></span></div>
-          <div class="vc-container"><div class="vc-product-center">
-          ${badge(c.product.tag, 'diamond')}
-          <div class="vc-product-title-wrap reveal"><h2 class="vc-product-name">Projete<span class="it">-se</span></h2><p class="vc-product-sub">${esc(c.product.subtitle)}</p></div>
-          <div class="vc-nots reveal">${c.product.nots.map((n) => `<span class="vc-not">${icon('x', 12)}${esc(n)}</span>`).join('')}</div>
-          <p class="vc-product-body reveal">${esc(c.product.body)}</p>
-          <div class="vc-product-cta reveal">${btn(c.product.cta)}</div>
-        </div>
-        </div></section>
-
-        <section class="vc-panel vc-prof" id="perfis"><div class="vc-container">
-          <div class="vc-shead"><span class="vc-mono">${esc(c.profiles.tag)}</span><h2 class="vc-motion-title vc-title-whisper">${whisperWords('Nem toda arquiteta vive a profissão ')}<span class="it">${whisperWords('do mesmo jeito.', 6)}</span></h2><p class="lead">${esc(c.profiles.lead)}</p></div>
-          <div class="vc-prof-tabs" role="tablist">${c.profiles.items.map((p, i) => `<button role="tab" aria-selected="${i === 0}" class="vc-prof-tab" data-profile="${i}"><span class="vc-prof-tab-meta">Perfil ${esc(p.letter)}</span><div class="vc-prof-tab-letter">${esc(p.letter)}</div><div class="vc-prof-tab-name">${esc(p.name)}</div></button>`).join('')}</div>
-          <div class="vc-prof-panel" id="profile-panel"></div>
-          <p class="vc-prof-quote-mid reveal"><span>"${esc(c.profiles.quote)}"</span></p>
-        </div></section>
-
-        <section class="vc-panel vc-panel--dark vc-proc" id="processo"><div class="vc-container">
-          <div class="vc-shead"><span class="vc-mono">${esc(c.process.tag)}</span><div class="vc-hand-title vc-motion-title"><svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M 108 178 C 76 98, 224 36, 570 42 C 914 45, 1112 96, 1082 176 C 1050 262, 774 274, 493 264 C 236 254, 98 230, 108 178"></path></svg><h2>Um processo em etapas. <span class="it">Cada uma com propósito.</span></h2></div><p class="lead">${esc(c.process.lead)}</p></div>
+        <section class="vc-panel vc-panel--dark vc-proc" id="metodo"><div class="vc-container">
+          <div class="vc-shead"><span class="vc-mono">${esc(c.process.tag)}</span><div class="vc-hand-title vc-motion-title"><svg viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M 108 178 C 76 98, 224 36, 570 42 C 914 45, 1112 96, 1082 176 C 1050 262, 774 274, 493 264 C 236 254, 98 230, 108 178"></path></svg><h2>Seu Guia Pessoal para a Clareza: <span class="it">O Método Projete-se + IA</span></h2></div><p class="lead">${esc(c.process.lead)}</p></div>
           ${c.process.items.map((it) => `<div class="vc-proc-step reveal"><div class="vc-proc-n">${esc(it.n)}</div><div><h3>${esc(it.title)}</h3><p>${esc(it.body)}</p></div></div>`).join('')}
-          <div class="vc-video-preview reveal"><img src="leticia-videoaula-cropped.png" alt="Letícia gravando vídeo guia do Projete-se" loading="lazy"><div class="cap"><div class="cap-l"><span class="vc-mono">Vídeos guia · em cada etapa</span><h3>A mentora aparece em vídeo te orientando do começo ao fim.</h3></div><span class="cap-r">Incluído</span></div></div>
         </div></section>
 
-        <section class="vc-panel vc-ai"><div class="vc-container">
+        <section class="vc-panel vc-ai" id="ia"><div class="vc-container">
           <div class="vc-ai-grid">
             <div class="vc-ai-copy reveal">
               ${badge(c.ai.tag, 'sparkle')}
-              <h3>Clareza que continua em <span class="it">movimento.</span></h3>
+              <h3>Sua Mentora IA para transformar percepções em <span class="it">ações.</span></h3>
               <p>${esc(c.ai.lead)}</p>
               <p>${esc(c.ai.body)}</p>
               <ul class="vc-ai-list">${c.ai.bullets.map((item) => `<li>${icon('check', 15)}${esc(item)}</li>`).join('')}</ul>
@@ -215,14 +198,27 @@
         </div></section>
 
         <section class="vc-panel vc-trans"><div class="vc-container">
-          ${sheadUnderline(c.transformation.tag, 'O que muda <span class="it">depois</span> do Projete-se')}
+          ${sheadUnderline(c.transformation.tag, 'Antes e depois do <span class="it">Projete-se.</span>')}
           <div class="vc-trans-grid">
             <div class="vc-trans-col reveal"><div class="vc-trans-label">${icon('x', 12)}${esc(c.transformation.before.label)}</div><ul class="vc-trans-list">${c.transformation.before.items.map((t) => `<li>${icon('x', 14)}${esc(t)}</li>`).join('')}</ul></div>
             <div class="vc-trans-col vc-trans-col--after reveal"><div class="vc-trans-label">${icon('check', 12)}${esc(c.transformation.after.label)}</div><ul class="vc-trans-list">${c.transformation.after.items.map((t) => `<li>${icon('check', 14)}${esc(t)}</li>`).join('')}</ul></div>
           </div>
         </div></section>
 
-        <section class="vc-panel vc-panel--dark vc-mentor"><div class="vc-container">
+        <section class="vc-panel vc-testimonial-v2"><div class="vc-container">
+          <div class="vc-testimonial-head">
+            <span class="vc-testimonial-badge">DEPOIMENTOS</span>
+            <h2 class="vc-motion-title vc-title-whisper">${whisperWords('Quem já encontrou a clareza ')}<span class="it">${whisperWords('com o Projete-se:', 5)}</span></h2>
+          </div>
+          <div class="vc-testimonial-stage">${testimonials}</div>
+        </div></section>
+
+        <section class="vc-panel vc-bonus" id="bonus"><div class="vc-container">
+          ${sheadUnderline(c.bonus.tag, 'Bônus <span class="it">exclusivos.</span>')}
+          <div class="vc-bonus-list">${bonusCards}</div>
+        </div></section>
+
+        <section class="vc-panel vc-panel--dark vc-mentor" id="leticia"><div class="vc-container">
           <div class="vc-shead"><span class="vc-mono">${esc(c.mentor.tag)}</span><h2 class="vc-motion-title vc-title-whisper">${whisperWords('A pessoa por trás ')}<span class="it">${whisperWords('do método.', 4)}</span></h2></div>
           <div class="vc-mentor-grid">
             <div class="vc-mentor-intro reveal"><div class="vc-mentor-photo"><img src="leticia-perfil.jpg" alt="Letícia Schneider" loading="lazy"></div><span class="vc-mentor-role">${esc(c.mentor.role)}</span><h2>Letícia <span class="it">Schneider</span></h2><p class="vc-mentor-lead">"${esc(c.mentor.lead)}"</p></div>
@@ -230,40 +226,21 @@
           </div>
         </div></section>
 
-        <section class="vc-panel vc-testimonial-v2"><div class="vc-container">
-          <div class="vc-testimonial-head">
-            <span class="vc-testimonial-badge">DEPOIMENTOS</span>
-            <h2 class="vc-motion-title vc-title-whisper">${whisperWords('Clareza que continua ')}<span class="it">${whisperWords('depois da leitura.', 3)}</span></h2>
-            <p>Relatos de quem encontrou mais direção, leveza e espaço para transformar reflexões em próximos passos possíveis.</p>
-          </div>
-          <div class="vc-testimonial-stage">${testimonials}</div>
-        </div></section>
-
-        <section class="vc-panel vc-bonus"><div class="vc-container">
-          ${sheadUnderline(c.bonus.tag, 'Além do material, você ainda <span class="it">ganha estes bônus:</span>')}
-          <div class="vc-bonus-list">${bonusCards}</div>
-        </div></section>
-
-        <section class="vc-panel vc-panel--dark vc-pricing" id="oferta"><div class="vc-container">
-          <div class="vc-shead"><span class="vc-mono">${esc(c.pricing.tag)}</span><h2 class="vc-motion-title vc-title-whisper">${whisperWords('Tudo o que você está ')}<span class="it">${whisperWords('levando.', 5)}</span></h2></div>
-          <div class="vc-price-table reveal">${c.pricing.items.map((it, i) => `<div class="vc-price-row${it.bonus ? ' vc-price-row--bonus' : ''}"><span class="vc-price-num">${String(i + 1).padStart(2, '0')}</span><div class="vc-price-name">${esc(it.name)}</div><div class="vc-price-value-wrap"><div class="vc-price-value${it.bonus ? ' strike' : ''}">${esc(it.value)}</div>${it.bonus ? '<span class="vc-price-free">Grátis</span>' : ''}</div></div>`).join('')}<div class="vc-price-total"><span class="vc-mono" style="color:rgba(26,18,12,.6)">Σ</span><span class="lbl">Valor total da oferta</span><span class="v">${esc(c.pricing.total)}</span></div></div>
-          <div class="vc-price-today reveal"><span class="vc-price-today-lbl">${esc(c.pricing.todayLine)}</span><div class="vc-price-from">de <span class="strike">12x de R$59,90</span> por apenas</div><div class="vc-price-installment"><span class="pref">12x de</span><span class="num" id="price-counter"><span class="small">R$</span>59,90</span></div><div class="vc-price-cash">ou <b>R$97</b> à vista</div><p>${esc(c.pricing.framing)}</p>${btn(c.pricing.cta)}<small>${esc(c.pricing.sub)}</small></div>
-          <div class="vc-compare">${c.pricing.compare.map((line, i) => `<div class="vc-compare-item reveal"><span class="vc-mono">${['SketchUp / Revit', 'Gestão de escritório', 'Projete-se'][i]}</span>${i === 2 ? '<b>O Projete-se custa R$97.</b> E começa exatamente de onde você está.' : esc(line)}</div>`).join('')}</div>
-        </div></section>
-
-        <section class="vc-panel vc-guar"><div class="vc-container"><div class="vc-guar-badge reveal">${icon('shield', 56)}</div><h2 class="reveal">${esc(c.guarantee.title)}</h2><p class="reveal">${esc(c.guarantee.body)}</p><p class="vc-guar-note reveal">${esc(c.guarantee.note)}</p><div class="reveal">${btn(c.guarantee.cta)}</div></div></section>
-
-        <section class="vc-panel vc-panel--dark vc-faq" id="faq"><div class="vc-container">
-          ${sheadUnderline(c.faq.tag, 'Suas dúvidas, <span class="it">respondidas.</span>')}
-          <div class="vc-faq-list">${c.faq.items.map((it, i) => `<div class="vc-faq-item${i === 0 ? ' open' : ''}"><button class="vc-faq-q" aria-expanded="${i === 0}"><span class="num">${String(i + 1).padStart(2, '0')}</span><span>${esc(it.q)}</span><span class="vc-faq-toggle">${icon(i === 0 ? 'minus' : 'plus', 16)}</span></button><div class="vc-faq-a"><div class="vc-faq-a-inner">${esc(it.a)}</div></div></div>`).join('')}</div>
-        </div></section>
-
         <section class="vc-panel vc-close"><div class="vc-container">
-          <h2 class="reveal">Você tem dois caminhos<br><span class="it">a partir daqui.</span></h2>
-          <div class="vc-paths"><div class="vc-path reveal"><span class="vc-mono">Caminho A</span><p>${esc(c.close.pathA)}</p></div><div class="vc-path vc-path--b reveal"><span class="vc-mono">Caminho B · escolha</span><p>${esc(c.close.pathB)}</p></div></div>
-          <ul class="vc-bundle reveal">${c.close.bundle.map((b) => `<li>${icon('check', 14)}${esc(b)}</li>`).join('')}</ul>
-          <div class="vc-close-price reveal">12x de <b>R$10,03</b><div style="font-size:.7em;margin-top:8px;color:var(--ink-soft)">ou R$97 à vista</div></div>
-          <div class="reveal">${btn(c.close.cta)}</div><div class="vc-close-sub reveal">${esc(c.close.sub)}</div><blockquote class="vc-close-quote reveal">"${esc(c.mentor.quote)}"<span class="by">— ${esc(c.mentor.quoteBy)}</span></blockquote>
+          <h2 class="reveal">Chega de se sentir perdida.<br><span class="it">Sua carreira merece clareza.</span></h2>
+          <div class="vc-final-copy reveal">
+            <p>${esc(c.close.pathA)}</p>
+            <p>${esc(c.close.pathB)}</p>
+          </div>
+          <ul class="vc-bundle vc-bundle--simple reveal">${c.close.bundle.map((b) => `<li>${icon('check', 14)}${esc(b)}</li>`).join('')}</ul>
+          <div class="vc-price-today vc-price-today--compact reveal" id="oferta">
+            <span class="vc-price-today-lbl">Invista na sua clareza hoje por apenas:</span>
+            <div class="vc-price-from">de <span class="strike">12x de R$59,90</span> por apenas</div>
+            <div class="vc-price-installment"><span class="pref">12x de</span><span class="num" id="price-counter"><span class="small">R$</span>59,90</span></div>
+            <div class="vc-price-cash">ou <b>R$97</b> à vista</div>
+            ${btn(c.close.cta)}
+            <small>${esc(c.close.sub)}</small>
+          </div>
         </div></section>
 
         <footer class="vc-footer">${esc(c.footer)}</footer>
@@ -276,12 +253,14 @@
   let profileRotationStopped = false;
 
   function renderProfile(index) {
+    const panel = document.getElementById('profile-panel');
+    if (!panel) return;
     currentProfile = index;
     const profile = c.profiles.items[index];
     document.querySelectorAll('.vc-prof-tab').forEach((button, i) => {
       button.setAttribute('aria-selected', i === index ? 'true' : 'false');
     });
-    document.getElementById('profile-panel').innerHTML = `
+    panel.innerHTML = `
       <div class="vc-prof-big">${esc(profile.letter)}</div>
       <div>
         <span class="vc-prof-name">Perfil ${esc(profile.letter)} · ${esc(profile.name)}</span>
@@ -330,7 +309,7 @@
     requestAnimationFrame(tick);
   }
 
-  renderProfile(0);
+  if (document.getElementById('profile-panel')) renderProfile(0);
 
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
@@ -440,11 +419,14 @@
     }, { threshold: 0.45, rootMargin: '0px 0px -8% 0px' });
     document.querySelectorAll('.vc-motion-title').forEach((title) => motionObserver.observe(title));
 
-    const profilesObserver = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) startProfileRotation();
-      else pauseProfileRotation();
-    }, { threshold: 0.3 });
-    profilesObserver.observe(document.getElementById('perfis'));
+    const profilesSection = document.getElementById('perfis');
+    if (profilesSection) {
+      const profilesObserver = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) startProfileRotation();
+        else pauseProfileRotation();
+      }, { threshold: 0.3 });
+      profilesObserver.observe(profilesSection);
+    }
 
     const observer = new IntersectionObserver((entries) => {
       if (entries.some((entry) => entry.isIntersecting)) {
@@ -455,7 +437,7 @@
     observer.observe(counter);
   } else {
     document.querySelectorAll('.vc-motion-title').forEach((title) => title.classList.add('is-active'));
-    startProfileRotation();
+    if (document.getElementById('profile-panel')) startProfileRotation();
     startCounter();
   }
 })();
